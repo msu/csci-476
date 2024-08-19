@@ -1,11 +1,21 @@
 # Code & Examples Computer Security @ MSU
 
-Includes code examples from class.
+Lab materials and in-class code for CSCI 476- Computer Security  
 
-Many of our examples are adapted from **SEED Labs**
+Many of our examples and labs are adapted from **SEED Labs**
 [[1](https://github.com/seed-labs/seed-labs), [2](https://www.handsonsecurity.net)].
 
 # Tips & Tricks
+
+### Installing the VM  
+We will be doing the SEED Labs 2.0 , which requires the SEED Ubuntu-20.04 VM. The instructions for installing it can be found here: [https://seedsecuritylabs.org/labsetup.html](https://seedsecuritylabs.org/labsetup.html). If you have an Apple Silicon Machine, make sure to use the appropriate instructions.  
+
+### Working with the VM  
+The VM can be buggy sometimes (unfortunately). You will likely have to recreate it from scratch and reclone this repository at some point in the semester. Here are some tips for working with our VM
+- Save your work frequently and take screenshots for the lab report while you are working on the lab.
+- Do not aggressively asjust the window size. This can crash the VM.  
+- If your VM is slow, or crashes, try to give it more video memory
+- If your VM is totally bricked and you dont know why, I recommend just deleting and recreating the VM from scratch
 
 ### Updating the Shell
 
@@ -26,30 +36,3 @@ $ sudo ln -sf /bin/zsh /bin/sh   # make sh symlink to zsh
 $ sudo ln -sf /bin/dash /bin/sh  # sh is symlink to dash (default)
 ```
 
-### Updating the Hostname
-
-Sometimes for clarity it is nice to change the hostname.
-For example, I will often set the hostname to a descriptive name (e.g., attacker, user, server)
-in demos to clarify the role of a particular VM.
-Here is a simple way to achieve this:
-
-```bash
-sudo hostnamectl set-hostname NEW_NAME_YOU_WANT
-```
-
-### Configure `gdb` to use Intel / AT&T syntax for Dissasembled Code
-
-```bash
-$ show disassembly-flavor
-```
-
-I think the Intel syntax is cleaner, but use whichever syntax is best for you:
-
-```bash
-# make sure default assembly syntax is att syntax. ONLY NEED TO RUN THIS ONCE!
-$ echo 'set disassembly-flavor intel' >> ~/.gdbinit
-# or
-$ echo 'set disassembly-flavor att' >> ~/.gdbinit
-```
-
-Ref: [https://visualgdb.com/gdbreference/commands/set_disassembly-flavor](https://visualgdb.com/gdbreference/commands/set_disassembly-flavor)
