@@ -13,7 +13,7 @@ We will be doing the SEED Labs 2.0 , which requires the SEED Ubuntu-20.04 VM. Th
 ### Working with the VM  
 The VM can be buggy sometimes (unfortunately). You will likely have to recreate it from scratch and reclone this repository at some point in the semester. Here are some tips for working with our VM
 - Save your work frequently and take screenshots for the lab report while you are working on the lab.
-- Do not aggressively asjust the window size. This can crash the VM.  
+- Do not aggressively adjust the window size. This can crash the VM.  
 - If your VM is slow, or crashes, try to give it more video memory
 - If your VM is totally bricked and you dont know why, I recommend just deleting and recreating the VM from scratch
 
