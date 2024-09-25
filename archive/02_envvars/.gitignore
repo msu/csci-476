@@ -1,7 +1,0 @@
-a.out
-myprintenv
-myenv_execve
-myenv_system
-myenv_envp
-myenv_environ
-ls_vuln
