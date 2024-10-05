@@ -3,7 +3,7 @@ FLAGS_32 = -m32
 TARGET   = stack-L3 stack-L3-dbg 
 
 # Pick a number between 100-400
-L3 = 100
+L3 = 200
 
 all: $(TARGET)
 
