@@ -1,8 +1,6 @@
 ## Examples
 
 See the subdirectories here for a few helpful intro examples:
-- `makefiles/` - simple and advanced example of Makefiles
-- `pba/` - simple code that helps you explore the compilation process
 - `probe` - simple code to explore the address space of a running process
 
 ## Some Command Line Basics
@@ -33,8 +31,6 @@ The notion of a **user** provides the system with a mechanism to relate entities
 A **group** is just a collection of users; groups make it easier to manage permissions.
 
 Some examples looking at files, permissions, and identity:
-
-> Inspired by Travis's recent watching of the Lord of the Rings... also check out Mary's art: https://www.instagram.com/p/CJm5r3dHR4B/
 
 ```bash
 cat /etc/passwd
