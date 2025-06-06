@@ -1,2 +1,3 @@
-a32.out
-a64.out
+*.out
+codefile_32
+codefile_64
